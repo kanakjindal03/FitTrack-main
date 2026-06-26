@@ -15,7 +15,7 @@ app.use(cors({
 app.options('*', cors());
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://hvf9hgn.mongodb.net/fitness?');
+mongoose.connect(process.env.MONGO_URI);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
